@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { BiMessageAdd } from "react-icons/bi";
 
 const TodoAdd = ({ addElem }) => {
-  let [name, setName] = useState();
-  let [date, setDate] = useState();
+  let [name, setName] = useState("");
+  let [date, setDate] = useState("");
   const todoName = (event) => {
     //console.log(event.target.value);
     setName(event.target.value);
@@ -13,6 +14,8 @@ const TodoAdd = ({ addElem }) => {
   };
   const addButton = () => {
     addElem(name, date);
+    setName("");
+    setDate("");
   };
   return (
     <div className="container">
@@ -22,10 +25,11 @@ const TodoAdd = ({ addElem }) => {
             type="text"
             placeholder="Enter TODO Here"
             onChange={todoName}
+            value={name}
           ></input>
         </div>
         <div className="col-4">
-          <input type="date" onChange={todoDate}></input>
+          <input type="date" onChange={todoDate} value={date}></input>
         </div>
         <div className="col-2">
           <button
@@ -33,7 +37,7 @@ const TodoAdd = ({ addElem }) => {
             className="btn btn-success kg-button"
             onClick={addButton}
           >
-            Add
+            <BiMessageAdd />
           </button>
         </div>
       </div>

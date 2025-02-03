@@ -11,6 +11,7 @@ function App() {
   const addElem = (task, date) => {
     console.log(task + " " + date);
     let newTodo = [...todo, { todotask: task, tododate: date }];
+
     setTodo(newTodo);
     //setTodo("added");
   };
