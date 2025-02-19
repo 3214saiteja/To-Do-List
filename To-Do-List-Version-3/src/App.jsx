@@ -9,11 +9,12 @@ import WelcomeMsg from "./Components/WelcomeMsg";
 function App() {
   let [todo, setTodo] = useState([]);
   const addElem = (task, date) => {
-    console.log(task + " " + date);
-    let newTodo = [...todo, { todotask: task, tododate: date }];
+    //console.log(task + " " + date);
+    //let newTodo = [...todo, { todotask: task, tododate: date }];
 
-    setTodo(newTodo);
+    //setTodo(newTodo);
     //setTodo("added");
+    setTodo((currValue) => [...currValue, { todotask: task, tododate: date }]);
   };
 
   const onClickDelete = (delname) => {
