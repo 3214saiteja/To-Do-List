@@ -3,8 +3,9 @@ import TodoAdd from "./Components/TodoAdd";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TodoItems from "./Components/TodoItems";
+import { useState } from "react";
 function App() {
-  let Todo = [
+  let todo = [
     {
       todotask: "buy milk",
       tododate: "20/12/2024",
@@ -18,11 +19,13 @@ function App() {
       tododate: "20/12/2024",
     },
   ];
+  // let [todo, setTodo] = useState([]);
+
   return (
     <center>
       <TodoHeading></TodoHeading>
       <TodoAdd></TodoAdd>
-      <TodoItems items={Todo}></TodoItems>
+      <TodoItems items={todo}></TodoItems>
     </center>
   );
 }
